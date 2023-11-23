@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput;
     public float horizontalMultiplier = 1.6f;
+    //Bounds Range
+    //public float xRange = 3.9f;
+
+    public bool isOnGround = true;
+    public float jumpForce;
 
 
     // // Start is called before the first frame update
@@ -18,6 +23,7 @@ public class PlayerController : MonoBehaviour
         
     // }
 
+    
     //Fixed update allows for palyer to move forward every 5 units per seconds giving better performance and smootness
     //Constant forward movements for runner
     private void FixedUpdate (){     
@@ -33,7 +39,30 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        //Side movements left/right
-        horizontalInput = Input.GetAxis("Horizontal");
+
+    //     //Keep Player In bounds
+	// if (transform.position.x < -xRange)
+	// {
+	// 	transform.position = new Vector3(-xRange, transform.position.x, transform.position.z);
+	// }
+
+	// if (transform.position.x > xRange)
+	// {
+	// 	transform.position = new Vector3(xRange, transform.position.x, transform.position.z);
+	// }
+
+    //Side movements left/right
+    horizontalInput = Input.GetAxis("Horizontal");
+
+    //jumping with spacebar
+    if (Input.GetKeyDown(KeyCode.Space) && isOnGround) {
+         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse) ;
+         isOnGround = false; } 
     }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        isOnGround = true; 
+    }
+
 }
