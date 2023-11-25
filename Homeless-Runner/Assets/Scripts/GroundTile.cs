@@ -8,18 +8,26 @@ public class GroundTile : MonoBehaviour
 
     public GameObject[] obstaclePrefabs;
     public Transform[] spawnPoints;
+    private PlayerController playerControllerScript;
 
 
     private void Awake(){
          //returns Ground so when player reaches spawner a floor will generate infront of them.
+       
+      
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
+        
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+                 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnObs();
-            
+      SpawnObs();
+
+
+       
     }
 
 
@@ -39,10 +47,18 @@ public class GroundTile : MonoBehaviour
 
     public void SpawnObs()
     {
+        
+        if(playerControllerScript.gameOver == false)
+        {
         //random generter of 3 spawnpoints 
         int ChooseSpawnPoint = Random.Range(0,spawnPoints.Length);
         int SpawnPrefab = Random.Range(0,obstaclePrefabs.Length);
 
         Instantiate(obstaclePrefabs[SpawnPrefab],spawnPoints[ChooseSpawnPoint].transform.position,Quaternion.identity, transform);
+        }
+       
+        
+        
+        
     }
 }

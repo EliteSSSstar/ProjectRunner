@@ -348,7 +348,9 @@
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/GroundSpawner.cs"
 "Assets/Scripts/GroundTile.cs"
+"Assets/Scripts/Link.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PressHandler.cs"
 -langversion:9.0
 
 /deterministic

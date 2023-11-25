@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     
     //Veriables
-    public float speed = 5;
+    public float speed = 10;
     public Rigidbody rb;
 
     float horizontalInput;
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isOnGround = true;
     public float jumpForce;
+
+    public bool gameOver = false;
 
 
     // // Start is called before the first frame update
@@ -57,12 +59,34 @@ public class PlayerController : MonoBehaviour
     //jumping with spacebar
     if (Input.GetKeyDown(KeyCode.Space) && isOnGround) {
          rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse) ;
-         isOnGround = false; } 
+        // isOnGround = false; 
+        } 
     }
 
-    private void OnCollisionEnter(Collision collision) 
+    // private void OnCollisionEnter(Collision collision) 
+    // {
+    //     isOnGround = true; 
+    // }
+
+
+    //Check if player runs into obstecle and if on ground then gives gameover message
+    private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true; 
+     if (collision.gameObject.CompareTag("Ground")) {
+         isOnGround = true;
+         } 
+             else if (collision.gameObject.CompareTag("Obstacle" )) {
+             gameOver = true;
+             Debug.Log("Game Over!"); } 
+             else if (collision.gameObject.CompareTag("Obs1" )) {
+             gameOver = true;
+             Debug.Log("Game Over!"); } 
+             else if (collision.gameObject.CompareTag("Obs2" )) {
+             gameOver = true;
+             Debug.Log("Game Over!"); } 
+
     }
+
+    
 
 }
