@@ -50,7 +50,7 @@ public class GroundTile : MonoBehaviour
         
         if(playerControllerScript.gameOver == false)
         {
-        //random generter of 3 spawnpoints 
+        //random generter of spawnpoints 
         int ChooseSpawnPoint = Random.Range(0,spawnPoints.Length);
         int SpawnPrefab = Random.Range(0,obstaclePrefabs.Length);
 

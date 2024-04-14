@@ -355,6 +355,7 @@
 "Assets/Scripts/PowerupsEffects.cs"
 "Assets/Scripts/PressHandler.cs"
 "Assets/Scripts/SpeedBoost.cs"
+"Assets/Scripts/TimeSpawn.cs"
 -langversion:9.0
 
 /deterministic
