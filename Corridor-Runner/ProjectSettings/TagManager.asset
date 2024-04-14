@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Obs1
   - Obs2
+  - Obs3
   layers:
   - Default
   - TransparentFX

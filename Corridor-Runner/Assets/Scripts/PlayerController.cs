@@ -5,13 +5,13 @@ public class PlayerController : MonoBehaviour
 {
     
     //Veriables
-    public float speed = 10;
+    public float speed = 10f;
     public Rigidbody rb;
 
     float horizontalInput;
     public float horizontalMultiplier = 1.6f;
     //Bounds Range
-    //public float xRange = 3.9f;
+    public float xRange = 4.0f;
 
     public bool isOnGround = true;
     public float jumpForce;
@@ -43,15 +43,15 @@ public class PlayerController : MonoBehaviour
 
 
     //     //Keep Player In bounds
-	// if (transform.position.x < -xRange)
-	// {
-	// 	transform.position = new Vector3(-xRange, transform.position.x, transform.position.z);
-	// }
+	if (transform.position.x < -xRange)
+	{
+		transform.position = new Vector3(-xRange, transform.position.x, transform.position.z);
+	}
 
-	// if (transform.position.x > xRange)
-	// {
-	// 	transform.position = new Vector3(xRange, transform.position.x, transform.position.z);
-	// }
+	if (transform.position.x > xRange)
+	{
+		transform.position = new Vector3(xRange, transform.position.x, transform.position.z);
+	}
 
     //Side movements left/right
     horizontalInput = Input.GetAxis("Horizontal");
@@ -82,6 +82,9 @@ public class PlayerController : MonoBehaviour
              gameOver = true;
              Debug.Log("Game Over!"); } 
              else if (collision.gameObject.CompareTag("Obs2" )) {
+             gameOver = true;
+             Debug.Log("Game Over!"); } 
+             else if (collision.gameObject.CompareTag("Obs3" )) {
              gameOver = true;
              Debug.Log("Game Over!"); } 
 
