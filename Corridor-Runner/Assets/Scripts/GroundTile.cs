@@ -36,7 +36,7 @@ public class GroundTile : MonoBehaviour
             
         groundSpawner.SpawnTile();
         //destroy objects/floor after few second
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 7);
     }
 
     // Update is called once per frame

@@ -13,6 +13,7 @@ public static class SceneController
     public static void Restart()
     {
         LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
     public static void NextLevel()

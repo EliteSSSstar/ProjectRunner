@@ -9,6 +9,7 @@ TagManager:
   - Obs1
   - Obs2
   - Obs3
+  - Wall
   layers:
   - Default
   - TransparentFX
