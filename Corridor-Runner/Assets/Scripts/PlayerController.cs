@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
   // public float xRange = 4.0f;
 
     public bool isOnGround = true;
-    public float jumpForce;
+   // public float jumpForce;
 
     public bool gameOver = false;
 
@@ -65,11 +65,12 @@ public class PlayerController : MonoBehaviour
 	// }
 
     //jumping with spacebar
-    if (Input.GetKeyDown(KeyCode.Space) && isOnGround) {
-         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse) ;
-        // isOnGround = false; 
-        } 
-    }
+    // if (Input.GetKeyDown(KeyCode.Space) && isOnGround) {
+    //      rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse) ;
+    //     // isOnGround = false; 
+    //     } 
+
+    } //end of UpDate void
 
     // private void OnCollisionEnter(Collision collision) 
     // {
@@ -87,12 +88,15 @@ public class PlayerController : MonoBehaviour
         }
         // If player collides with obstacles, it's game over
         else if (collision.gameObject.CompareTag("Obstacle") ||
+                // Obs red kills player so game over
                  collision.gameObject.CompareTag("Obs1") ||
+                 //Obs2 blue orange takes half lifes
                  collision.gameObject.CompareTag("Obs2") ||
+                 //obs 3 just a box can pass trough it 
                  collision.gameObject.CompareTag("Obs3"))
         {
-            gameOver = true;
-             SceneController.LoadScene(2);
+           // gameOver = true;
+            //SceneController.LoadScene(2);
             Debug.Log("Game Over!");
         }
 

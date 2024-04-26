@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Collisions : MonoBehaviour
 {
 
     public bool gameOver = false;
 
     public bool isOnGround = true;
+
     
     // Start is called before the first frame update
     void Start()
@@ -28,18 +30,20 @@ public class Collisions : MonoBehaviour
          isOnGround = true;
          } 
              else if (collision.gameObject.CompareTag("Obstacle" )) {
-             gameOver = true;
-             Debug.Log("Game Over!"); } 
-             else if (collision.gameObject.CompareTag("Obs1" )) {
-             gameOver = true;
-             Debug.Log("Game Over!"); } 
+                
+                 Debug.Log("Collision"); } 
+             else if (collision.gameObject.CompareTag("Obs1" )) 
+             {
+                
+                Debug.Log("oBS1"); 
+             } 
              else if (collision.gameObject.CompareTag("Obs2" )) {
-             gameOver = true;
-             Debug.Log("Game Over!"); } 
+            
+             Debug.Log("Obs2"); } 
              else if (collision.gameObject.CompareTag("Obs3" )) {
              //Spawn Power up 
              
-             Debug.Log("Game Over!"); } 
+             Debug.Log("speed"); } 
 
     }
 }
