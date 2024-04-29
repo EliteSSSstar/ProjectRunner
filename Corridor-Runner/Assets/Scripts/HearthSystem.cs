@@ -19,6 +19,14 @@ public class HearthSystem : MonoBehaviour
     // Update is called once per frame
    public void UpdateHealth()
     {
+        //Check game Over If player Healt Null
+        if (playerHealth <= 0)
+        {
+            //Game over
+            
+            SceneController.LoadScene(2);
+        }
+
         for(int i = 0; i < hearts.Length; i++)
         {
             if(i < playerHealth)

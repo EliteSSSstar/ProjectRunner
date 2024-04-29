@@ -8,8 +8,9 @@ public class PowerUps : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Destroy(gameObject);
         PowerupsEffect.Apply(collision.gameObject);
+        Destroy(gameObject);
+        
 
     }
     

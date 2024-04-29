@@ -31,19 +31,20 @@ public class Collisions : MonoBehaviour
          } 
              else if (collision.gameObject.CompareTag("Obstacle" )) {
                 
-                 Debug.Log("Collision"); } 
+                 Debug.Log("Oops");
+                  } 
              else if (collision.gameObject.CompareTag("Obs1" )) 
              {
                 
-                Debug.Log("oBS1"); 
+                Debug.Log("Ouch!!"); 
              } 
              else if (collision.gameObject.CompareTag("Obs2" )) {
             
-             Debug.Log("Obs2"); } 
+             Debug.Log("UnBlessed"); } 
              else if (collision.gameObject.CompareTag("Obs3" )) {
              //Spawn Power up 
              
-             Debug.Log("speed"); } 
+             Debug.Log("Watch Out!!"); } 
 
     }
 }

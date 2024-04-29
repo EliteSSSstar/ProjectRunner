@@ -20,9 +20,10 @@ public class DamageController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Damage();
-             gameObject.SetActive(false);
+            // gameObject.SetActive(false);
               Destroy(gameObject); // Optional, destroy game object on collision
         }
+
    }
 
     public void Damage()
@@ -39,6 +40,8 @@ public class DamageController : MonoBehaviour
             Debug.LogError("HearthSystem component not found on player!");
         }
     }
+
+    
 
 
 }

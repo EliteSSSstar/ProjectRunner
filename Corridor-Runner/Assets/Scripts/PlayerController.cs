@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
 
     float horizontalInput;
-    public float horizontalMultiplier = 1.6f;
+    //public float horizontalMultiplier = 1.6f;
+
     //Bounds Range
   // public float xRange = 4.0f;
 
@@ -37,14 +38,15 @@ public class PlayerController : MonoBehaviour
     //Constant forward movements for runner
     private void FixedUpdate ()
     {     
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+        
+        Vector3 forwardMove =  transform.forward * speed * Time.fixedDeltaTime;
 
         //Side movements left/right
         float horizontalInput = Input.GetAxis("Horizontal");
 
         //Horizontal movement while keeping speed and forward projection
         //horizontalMulti allowing to move faster horizontaly compared to forward
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime /* horizontalMultiplier */ ;
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
